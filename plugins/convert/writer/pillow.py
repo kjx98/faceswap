@@ -9,8 +9,8 @@ from ._base import Output, logger
 
 class Writer(Output):
     """ Images output writer using cv2 """
-    def __init__(self, output_folder):
-        super().__init__(output_folder)
+    def __init__(self, output_folder, **kwargs):
+        super().__init__(output_folder, **kwargs)
         self.check_transparency_format()
         # Correct format namings for writing to byte stream
         self.format_dict = dict(jpg="JPEG", jp2="JPEG 2000", tif="TIFF")
@@ -50,6 +50,7 @@ class Writer(Output):
             logger.error("Failed to save image '%s'. Original Error: %s", filename, err)
 
     def pre_encode(self, image):
+        """ Pre_encode the image in lib/convert.py threads as it is a LOT quicker """
         logger.trace("Pre-encoding image")
         fmt = self.format_dict.get(self.config["format"], None)
         fmt = self.config["format"].upper() if fmt is None else fmt

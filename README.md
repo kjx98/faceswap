@@ -1,19 +1,27 @@
-**Notice:** This repository is not operated or maintained by /u/deepfakes. Please read the explanation below for details.
 # deepfakes_faceswap
+<p align="center">
+  <a href="https://faceswap.dev"><img src="https://i.imgur.com/zHvjHnb.png"></img></a>
+<br />FaceSwap is a tool that utilizes deep learning to recognize and swap faces in pictures and videos.
+</p>
+<p align="center">
+<img src = "https://i.imgur.com/nWHFLDf.jpg"></img>
+</p>
 
-FaceSwap is a tool that utilizes deep learning to recognize and swap faces in pictures and videos.
-![Screenshots](https://i.imgur.com/nWHFLDf.jpg)
-
+<p align="center">
+<a href="https://www.patreon.com/bePatron?u=23238350"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png"></img></a>
+</p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=r1jng79a5xc"><img src="https://img.youtube.com/vi/r1jng79a5xc/0.jpg"></img></a>
 <br />Jennifer Lawrence/Steve Buscemi FaceSwap using the Villain model
 </p>
 
+[![Build Status](https://travis-ci.org/deepfakes/faceswap.svg?branch=master)](https://travis-ci.org/deepfakes/faceswap) [![Documentation Status](https://readthedocs.org/projects/faceswap/badge/?version=latest)](https://faceswap.readthedocs.io/en/latest/?badge=latest)
+
 Make sure you check out [INSTALL.md](INSTALL.md) before getting started.
 
 - [deepfakes_faceswap](#deepfakesfaceswap)
 - [Manifesto](#manifesto)
-  - [FaceSwap is not porn.](#faceswap-is-not-porn)
+  - [FaceSwap has ethical uses.](#faceswap-has-ethical-uses)
 - [How To setup and run the project](#how-to-setup-and-run-the-project)
 - [Overview](#overview)
   - [Extract](#extract)
@@ -23,11 +31,13 @@ Make sure you check out [INSTALL.md](INSTALL.md) before getting started.
 - [General notes:](#general-notes)
 - [Help I need support!](#help-i-need-support)
   - [Discord Server](#discord-server)
-  - [FaceSwap-Playground](#faceswap-playground)
+  - [FaceSwap Forum](#faceswap-forum)
 - [Donate](#donate)
-  - [@torzdf](#torzdf)
-  - [@andenixa](#andenixa)
-  - [@kvrooman](#kvrooman)
+  - [Patreon](#patreon)
+  - [One time Donations](#one-time-donations)
+    - [@torzdf](#torzdf)
+    - [@andenixa](#andenixa)
+    - [@kvrooman](#kvrooman)
 - [How to contribute](#how-to-contribute)
   - [For people interested in the generative models](#for-people-interested-in-the-generative-models)
   - [For devs](#for-devs)
@@ -44,9 +54,9 @@ Make sure you check out [INSTALL.md](INSTALL.md) before getting started.
 
 # Manifesto
 
-## FaceSwap is not porn.
+## FaceSwap has ethical uses.
 
-When faceswapping was first developed and published, the technology was groundbreaking, it was a huge step in AI development. It was also completely ignored outside of academia because the code was confusing and fragmentary. It required a thorough understanding of complicated AI techniques and took a lot of effort to figure it out. Until one individual brought it together into a single, cohesive collection. It ran, it worked, and as is so often the way with new technology emerging on the internet, it was immediately used to create porn. The problem was that this was the first AI code that anyone could download, run and learn by experimentation without having a Ph.D. in math, computer theory, psychology, and more. Before "deepfakes" these techniques were like black magic, only practiced by those who could understand all of the inner workings as described in esoteric and endlessly complicated books and papers.
+When faceswapping was first developed and published, the technology was groundbreaking, it was a huge step in AI development. It was also completely ignored outside of academia because the code was confusing and fragmentary. It required a thorough understanding of complicated AI techniques and took a lot of effort to figure it out. Until one individual brought it together into a single, cohesive collection. It ran, it worked, and as is so often the way with new technology emerging on the internet, it was immediately used to create inappropriate content. Despite the inappropriate uses the software was given originally, it was the first AI code that anyone could download, run and learn by experimentation without having a Ph.D. in math, computer theory, psychology, and more. Before "deepfakes" these techniques were like black magic, only practiced by those who could understand all of the inner workings as described in esoteric and endlessly complicated books and papers.
 
 "Deepfakes" changed all that and anyone could participate in AI development. To us, developers, the release of this code opened up a fantastic learning opportunity. It allowed us to build on ideas developed by others, collaborate with a variety of skilled coders, experiment with AI whilst learning new skills and ultimately contribute towards an emerging technology which will only see more mainstream use as it progresses.
 
@@ -54,7 +64,7 @@ Are there some out there doing horrible things with similar software? Yes. And b
 
 We are not trying to denigrate celebrities or to demean anyone. We are programmers, we are engineers, we are Hollywood VFX artists, we are activists, we are hobbyists, we are human beings. To this end, we feel that it's time to come out with a standard statement of what this software is and isn't as far as us developers are concerned.
 
-- FaceSwap is not for creating porn
+- FaceSwap is not for creating inappropriate content.
 - FaceSwap is not for changing faces without consent or with the intent of hiding its use.
 - FaceSwap is not for any illicit, unethical, or questionable purposes.
 - FaceSwap exists to experiment and discover AI techniques, for social or political commentary, for movies, and for any number of ethical and reasonable uses.
@@ -64,13 +74,13 @@ We are very troubled by the fact that FaceSwap can be used for unethical and dis
 # How To setup and run the project
 FaceSwap is a Python program that will run on multiple Operating Systems including Windows, Linux, and MacOS.
 
-See [INSTALL.md](INSTALL.md) for full installation instructions. You will need a modern GPU with CUDA support for best performance.
+See [INSTALL.md](INSTALL.md) for full installation instructions. You will need a modern GPU with CUDA support for best performance. AMD GPUs are partially supported.
 
 # Overview
 The project has multiple entry points. You will have to:
- - Gather photos (or use the one provided in the training data provided below)
+ - Gather photos and/or videos
  - **Extract** faces from your raw photos
- - **Train** a model on your photos (or use the one provided in the training data provided below)
+ - **Train** a model on the faces extracted from the photos/videos
  - **Convert** your sources with the model
 
 Check out [USAGE.md](USAGE.md) for more detailed instructions.
@@ -100,15 +110,22 @@ If there is not enough training data, start with someone who looks similar, then
 
 # Help I need support!
 ## Discord Server
-Your best bet is to join the [FaceSwap Discord server](https://discord.gg/FdEwxXd) where there are plenty of users willing to help. Please note that, like this repo, this is a SFW Server!
+Your best bet is to join the [FaceSwap Discord server](https://discord.gg/FC54sYg) where there are plenty of users willing to help. Please note that, like this repo, this is a SFW Server!
 
-## FaceSwap-Playground
-Alternatively, you can post questions in the [FaceSwap Playground](https://github.com/deepfakes/faceswap-playground). Please do not post general support questions in this repo.
+## FaceSwap Forum
+Alternatively, you can post questions in the [FaceSwap Forum](https://faceswap.dev/forum). Please do not post general support questions in this repo as they are liable to be deleted without response.
 
 # Donate
 The developers work tirelessly to improve and develop FaceSwap. Many hours have been put in to provide the software as it is today, but this is an extremely time-consuming process with no financial reward. If you enjoy using the software, please consider donating to the devs, so they can spend more time implementing improvements.
 
-## @torzdf
+## Patreon
+The best way to support us is through our Patreon page:
+
+[![become-a-patron](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/bePatron?u=23238350)
+
+## One time Donations
+Alternatively you can give a one off donation to any of our Devs:
+### @torzdf
  There is very little FaceSwap code that hasn't been touched by torzdf. He is responsible for implementing the GUI, FAN aligner, MTCNN detector and porting the Villain, DFL-H128 and DFaker models to FaceSwap, as well as significantly improving many areas of the code.
 
 **Bitcoin:** 385a1r9tyZpt5LyZcNk1FALTxC8ZHta7yq
@@ -117,12 +134,12 @@ The developers work tirelessly to improve and develop FaceSwap. Many hours have 
 
 **Paypal:** [![torzdf](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JZ8PP3YE9J62L)
 
-## @andenixa
+### @andenixa
 Creator of the Unbalanced and OHR models, as well as expanding various capabilities within the training process. Andenixa is currently working on new models and will take requests for donations.
 
 **Paypal:** [![andenixa](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRVLQYGS6NWTU)
 
-## @kvrooman
+### @kvrooman
 Responsible for consolidating the converters, adding a lot of code to fix model stability issues, and helping significantly towards making the training process more modular, kvrooman continues to be a very active contributor.
 
 **Ethereum:** 0x18CBbff5fA7C78de7B949A2b0160A0d1bd649f80
@@ -135,7 +152,6 @@ Responsible for consolidating the converters, adding a lot of code to fix model 
 ## For devs
  - Read this README entirely
  - Fork the repo
- - Download the data with the link provided above
  - Play with it
  - Check issues with the 'dev' tag
  - For devs more interested in computer vision and openCV, look at issues with the 'opencv' tag. Also feel free to add your own alternatives/improvements
@@ -143,16 +159,15 @@ Responsible for consolidating the converters, adding a lot of code to fix model 
 ## For non-dev advanced users
  - Read this README entirely
  - Clone the repo
- - Download the data with the link provided above
  - Play with it
  - Check issues with the 'advuser' tag
- - Also go to the 'faceswap-playground' repo and help others.
+ - Also go to the '[faceswap Forum](https://faceswap.dev/forum)' and help others.
 
 ## For end-users
  - Get the code here and play with it if you can
- - You can also go to the 'faceswap-playground' repo and help or get help from others.
+ - You can also go to the [faceswap Forum](https://faceswap.dev/forum) and help or get help from others.
  - Be patient. This is a relatively new technology for developers as well. Much effort is already being put into making this program easy to use for the average user. It just takes time!
- - **Notice** Any issue related to running the code has to be open in the 'faceswap-playground' project!
+ - **Notice** Any issue related to running the code has to be opened in the [faceswap Forum](https://faceswap.dev/forum)!
 
 ## For haters
 Sorry, no time for that.
